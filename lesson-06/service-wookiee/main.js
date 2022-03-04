@@ -1,3 +1,21 @@
+// Register service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+
+  // Listen for messages from the service worker
+  navigator.serviceWorker.addEventListener("message", (event) => {
+    if (event.data.type === "fetch") {
+      handleUpdateRequestCount();
+    }
+  });
+}
+
+const requestCountElement = document.querySelector("#request-count");
+
+function handleUpdateRequestCount() {
+  requestCountElement.textContent = Number(requestCountElement.textContent) + 1;
+}
+
 const template = document.querySelector("#template").content;
 const boxes = document.querySelector("#boxes");
 
