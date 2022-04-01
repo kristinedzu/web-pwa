@@ -32,7 +32,7 @@ window.addEventListener('online', function(e) {
 
 
 
-
+//copy to clipboard
 var copyButton = document.getElementById("copy-to-clipboard");
 
 copyButton.addEventListener("click", () => {
@@ -46,6 +46,18 @@ copyButton.addEventListener("click", () => {
 });
 
 
+// share to other platforms
+var shareButton = document.getElementById("share");
 
-
+shareButton.addEventListener('click', async () => {
+  var shareData = {
+    text: document.getElementById("text-content").value
+  }
+  try {
+    await navigator.share(shareData)
+    console.log('MDN shared successfully');
+  } catch(err) {
+    console.log(err);
+  }
+});
 
