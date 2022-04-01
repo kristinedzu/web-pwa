@@ -33,4 +33,19 @@ window.addEventListener('online', function(e) {
 
 
 
+var copyButton = document.getElementById("copy-to-clipboard");
+
+copyButton.addEventListener("click", () => {
+  var inputText = document.getElementById("text-content").value;
+
+  navigator.clipboard.writeText(inputText).then(function() {
+    console.log("clipboard successfully set");
+  }, function() {
+    console.log("clipboard write failed");
+  });
+});
+
+
+
+
 
