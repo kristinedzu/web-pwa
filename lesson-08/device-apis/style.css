@@ -572,11 +572,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(240 249 255 / var(--tw-bg-opacity));
 }
 
-.bg-purple-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
-}
-
 .p-3 {
   padding: 0.75rem;
 }
